@@ -10,7 +10,11 @@ pip3 install -r requirements.txt
 
 
 ## config
-方法一：在 `lovedk.py` 的58-59行直接改变变量内容。
+方法一：在 `lovedk.py` 的61-62行直接改变变量内容。
+```python
+username = '<your_username>'
+password = '<your_password>'
+```
 
 方法二：使用命令行参数传入
 

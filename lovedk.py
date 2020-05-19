@@ -67,8 +67,9 @@ if __name__ == '__main__':
 
     if username == '' or password == '':
         print('⚠️ please enter username and password')
+        return
 
     try:
         asyncio.get_event_loop().run_until_complete(run(username, password))
     except:
-        print('\n⚠️ faild, trying again...\n')
+        print('⚠️ faild, please try again')
