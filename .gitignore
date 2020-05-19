@@ -1,6 +1,7 @@
-*.png
+/py/*.png
+/py/__pycache__
 
 /js/node_modules
-/js/yarn.*
-/js/*.json
 /js/*.png
+/js/yarn.lock
+/js/package-lock.json
