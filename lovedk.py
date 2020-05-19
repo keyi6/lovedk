@@ -34,23 +34,28 @@ async def run(username, password, DEBUG=False):
 
     # click login
     await click('input.btn_1_new')
-    print('login success')
+    print('login...')
 
     # click the first questionnaire
     await click('ul.content li')
-    print('successfully enter the questionnaire')
+    print('enter the questionnaire...')
     if DEBUG:
         await page.screenshot({'path': 'step_1.png'})
 
+    p = await page.Jeval('div.public_modal_tax', 'node => node.innerText')
+    if p and '您在周期内已填写过此问卷' in p:
+        print('⚠️', p)
+        return
+
     # click “确定”
     await page.click('a.am-modal-button:nth-child(2)')
-    print('successfully fill it with previous answer')
+    print('fill it with previous answer...')
     if DEBUG:
         await page.screenshot({'path': 'step_2.png'})
 
     # click '提交'
     await page.click('div.addanswer > div > div.btn_xs')
-    print('🎉 done')
+    print('🎉 done!')
     if DEBUG:
         await page.screenshot({'path': 'step_3.png'})
 
@@ -67,9 +72,5 @@ if __name__ == '__main__':
 
     if username == '' or password == '':
         print('⚠️ please enter username and password')
-        return
-
-    try:
+    else:
         asyncio.get_event_loop().run_until_complete(run(username, password))
-    except:
-        print('⚠️ faild, please try again')
