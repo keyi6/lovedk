@@ -40,9 +40,9 @@ python3 lovedk.py <your_username> <your_password>
 
 ```shell
 # use npm
-npm i puppeteer
+npm install
 # or use yarn
-yarn add puppeteer
+yarn
 ```
 
 ### step 2. config

@@ -65,6 +65,6 @@ async function run(username, password, DEBUG = false) {
 	if (username == '' || password == '') {
 		console.log('⚠️ please input your username and password');
 	} else {
-		await run(username, password, true);
+		await run(username, password);
 	}
 })();
