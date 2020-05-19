@@ -1,1 +1,6 @@
 *.png
+
+/js/node_modules
+/js/yarn.*
+/js/*.json
+/js/*.png
