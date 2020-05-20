@@ -1,7 +1,7 @@
 import sys
 import time
 import asyncio
-from random import random
+from random import random, choice
 from pyppeteer import launch
 
 
@@ -56,11 +56,18 @@ async def run(username, password, DEBUG=False):
         if DEBUG:
             await page.screenshot({'path': 'step_4.png'})
 
+        # type “您当前体温情况？”
+        temperature = [36.1, 36.2, 36.3, 36.4, 36.5, 36.6, 36.7, 36.8, 36.9, 37.0, 37.1]
+        await page.evaluate('document.querySelector("div.pdt15 > input").value='+str(choice(temperature)))
+        print('fill it with a random temperature...')
+        if DEBUG:
+            await page.screenshot({'path': 'step_5.png', 'fullPage': True})
+
         # click '提交'
         await page.click('div.addanswer > div > div.btn_xs')
         print('🎉 done!')
         if DEBUG:
-            await page.screenshot({'path': 'step_5.png'})
+            await page.screenshot({'path': 'step_6.png'})
 
     await browser.close()
 
