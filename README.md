@@ -64,7 +64,36 @@ let password = '';
 node lovedk.js <your_username> <your_password>
 ```
 
+
+
+## 说明
+
+如果将`DEBUG=True`，则每步应该输出一下图片。
+
+- step_1
+
+  ![](./doc/step_1.jpg)
+
+- step_2
+
+  ![](./doc/step_2.png)
+
+- step_3
+
+  ![](./doc/step_3.jpg)
+
+- step_4
+
+  ![](./doc/step_4.jpg)
+
+- step_5
+
+  ![](./doc/step_5.png)
+
+
+
 ## 其他
 
 如果有问题请提 issue。
 欢迎发 pr。
+
