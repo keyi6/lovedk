@@ -2,7 +2,7 @@
 
 此项目用于i大工健康上报自动打卡，提供[JavaScript](https://github.com/cjhahaha/lovedk/tree/master/js) 和 [Python](https://github.com/cjhahaha/lovedk/tree/master/py) 两个版本。
 
-🎉 新功能：[体温随机](https://github.cBye-lemonom/cjhahaha/lovedk/pull/1) by @Bye-lemon
+🎉 新功能：[体温随机](https://github.com/cjhahaha/lovedk/pull/1) by [@Bye-lemon](https://github.com/Bye-lemon)
 
 ## 🐍 python
 
