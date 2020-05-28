@@ -32,6 +32,7 @@ password = '<your_password>'
 ```shell
 python3 lovedk.py <your_username> <your_password>
 ```
+用 `--no-random-temperature` 不使用 [36.1, 37.1] 之间的随即温度，默认使用。 
 
 
 
