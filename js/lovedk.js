@@ -59,7 +59,7 @@ async function run(username, password, DEBUG = false) {
         // click '提交'
 		await page.click('div.addanswer > div > div.btn_xs')  // 在i大工中实际测试，点击输入框之后，第一次点击提交button无效。
         await page.click('div.addanswer > div > div.btn_xs')
-        print('🎉 done!')
+        console.log('🎉 done!')
         if (DEBUG) await page.screenshot({'path': 'step_5.png'})
 	}
 
