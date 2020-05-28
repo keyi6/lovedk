@@ -58,16 +58,22 @@ async def run(username, password, DEBUG=False):
 
         # type “您当前体温情况？”
         temperature = [36.1, 36.2, 36.3, 36.4, 36.5, 36.6, 36.7, 36.8, 36.9, 37.0, 37.1]
-        await page.evaluate('document.querySelector("div.pdt15 > input").value='+str(choice(temperature)))
+        temp = await page.Jeval("div.pdt15 > input", 'input => input.value')
+        await page.click("div.pdt15 > input")
+        for _ in temp:
+            await page.keyboard.press('Backspace')
+        await page.type("div.pdt15 > input", str(choice(temperature)))
+        time.sleep(DELAY)
         print('fill it with a random temperature...')
         if DEBUG:
             await page.screenshot({'path': 'step_5.png', 'fullPage': True})
 
         # click '提交'
+        await page.click('div.addanswer > div > div.btn_xs')  # 在i大工中实际测试，点击输入框之后，第一次点击提交button无效。
         await page.click('div.addanswer > div > div.btn_xs')
         print('🎉 done!')
         if DEBUG:
-            await page.screenshot({'path': 'step_6.png'})
+            await page.screenshot({'path': 'step_6.png', 'fullPage': True})
 
     await browser.close()
 
