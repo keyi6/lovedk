@@ -43,7 +43,21 @@ async function run(username, password, DEBUG = false) {
         console.log('fill it with previous answer...')
         if (DEBUG) await page.screenshot({'path': 'step_4.png'})
 
+		// type “您当前体温情况？”
+		let temperature = ["36.1", "36.2", "36.3", "36.4", "36.5", "36.6", "36.7", "36.8", "36.9", "37.0", "37.1"]
+		let temp = await page.evaluate(() => {
+			return document.querySelector('div.pdt15 > input').value
+		})
+		await page.click('div.pdt15 > input')
+		for (let i = 0; i < temp.length; i ++) {
+			await page.keyboard.press("Backspace");
+		}
+		await page.type('div.pdt15 > input', temperature[Math.round(Math.random()*(temperature.length-1))])
+		console.log('fill it with a random temperature...')
+		if (DEBUG) await page.screenshot({'path': 'step_5.png', 'fullPage': true})
+
         // click '提交'
+		await page.click('div.addanswer > div > div.btn_xs')  // 在i大工中实际测试，点击输入框之后，第一次点击提交button无效。
         await page.click('div.addanswer > div > div.btn_xs')
         print('🎉 done!')
         if (DEBUG) await page.screenshot({'path': 'step_5.png'})
