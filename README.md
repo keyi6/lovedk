@@ -56,7 +56,7 @@ sudo apt-get install gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcup
 
 方法一：在 `lovedk.js` 的57-58行直接改变变量内容。
 
-```python
+```JavaScript
 let username = '';
 let password = '';
 ```
@@ -66,7 +66,11 @@ let password = '';
 ```shell
 node lovedk.js <your_username> <your_password>
 ```
+用 `--no-random-temperature` 不使用 [36.1, 37.1] 之间的随即温度，默认使用。
 
+```shell
+node lovedk.js <your_username> <your_password> --no-random-temperature
+```
 
 
 ## 说明
