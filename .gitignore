@@ -5,3 +5,6 @@
 /js/*.png
 /js/yarn.lock
 /js/package-lock.json
+
+/log
+/scripts

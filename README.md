@@ -1,6 +1,8 @@
 # lovedk
 
-此项目用于i大工健康上报自动打卡，提供[JavaScript](https://github.com/cjhahaha/lovedk/tree/master/js) 和 [Python](https://github.com/cjhahaha/lovedk/tree/master/python) 两个版本。
+此项目用于i大工健康上报自动打卡，提供[JavaScript](https://github.com/cjhahaha/lovedk/tree/master/js) 和 [Python](https://github.com/cjhahaha/lovedk/tree/master/py) 两个版本。
+
+🎉 新功能：[体温随机](https://github.com/cjhahaha/lovedk/pull/1) by [@Bye-lemon](https://github.com/Bye-lemon)
 
 ## 🐍 python
 
@@ -30,6 +32,7 @@ password = '<your_password>'
 ```shell
 python3 lovedk.py <your_username> <your_password>
 ```
+用 `--no-random-temperature` 不使用 [36.1, 37.1] 之间的随即温度，默认使用。 
 
 
 
@@ -64,7 +67,36 @@ let password = '';
 node lovedk.js <your_username> <your_password>
 ```
 
+
+
+## 说明
+
+如果将`DEBUG=True`，则每步应该输出一下图片。
+
+- step_1
+
+  ![](./doc/step_1.jpg)
+
+- step_2
+
+  ![](./doc/step_2.png)
+
+- step_3
+
+  ![](./doc/step_3.jpg)
+
+- step_4
+
+  ![](./doc/step_4.jpg)
+
+- step_5
+
+  ![](./doc/step_5.png)
+
+
+
 ## 其他
 
 如果有问题请提 issue。
 欢迎发 pr。
+
